@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Guessing Game Demo</string>
+    <string name="you_have_won">You have Won!!</string>
+    <string name="you_have_lose">You have Lose!!</string>
+</resources>
