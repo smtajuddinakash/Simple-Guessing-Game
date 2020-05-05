@@ -31,19 +31,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        int GivenNumber = Integer.parseInt(ValueId.getText().toString());
+        String Number = ValueId.getText().toString();
+
+        int GivenNumber = Integer.parseInt(Number);
+
+        if (GivenNumber>10){
+            error();
+        }
 
         //Random number Generate
         Random random = new Random();
         int randomNumber = random.nextInt(10)+1;
 
-        if (randomNumber == GivenNumber){
-            result.setText("Congratulation! You Won");
+
+        if (Number.equals(" ")){
+
+            error();
+
         }
         else {
-            result.setText("Sorry! You Lost. Generated Number is: "+randomNumber);
+
+            if (randomNumber == GivenNumber){
+                result.setText("Congratulation! You Won");
+            }
+            else {
+                result.setText("Sorry! You Lost. Generated Number is: "+randomNumber);
+            }
+
         }
 
+    }
 
+    public void error(){
+        result.setText("Pleaser Enter an valid Input");
+        result.requestFocus();
+        return;
     }
 }
